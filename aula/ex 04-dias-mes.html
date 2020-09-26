@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+    <script>
+        // 'use strict' impede que variáveis sejam declaradas
+        // sem o uso de let, var ou const
+        // Inicializar variáveis diretamente é má prática de
+        // programação
+        'use strict'
+        
+        /*
+            Solicite ao usuário que informe o número correspondente a um
+            mês, na faixa entre 1 e 12.
+
+            Usando a estrutura switch..case, informe de volta ao usuário quantos
+            dias possui o mês informado, conforme segue:
+
+            JANEIRO, MARÇO, MAIO, JULHO, AGOSTO, OUTUBRO e DEZEMBRO: 31 dias
+            ABRIL, JUNHO, SETEMBRO e NOVEMBRO: 30 dias
+            FEVEREIRO: 28 dias (29 em anos bissextos)
+        */
+            let mes = parseInt(prompt('Informe um mês [1 a 12]:'))
+          
+            
+         
+            switch(mes){
+               case 1:
+               case 3:
+               case 5:
+               case 7:
+               case 8:
+               case 10:
+               case 12:
+               document.write('O mês digitado possui 31 dias')
+               break
+
+               case 2:
+                // Para o mês de fevereiro pode ser 29 dias (bissexto) ou 28 dias
+                let ano = parseInt(prompt('Informe o ano:'))
+                  if (isNaN(ano) || ano < 1582){
+                      alert(' Erro: Não é um ano válido ')
+                  }
+                  else if (ano % 400 == 0 || (ano % 4 == 0 && ano % 100 !=100)){
+                      document.write(' O mês digitado possui 29 dias (bissexto)')
+                  } 
+                    else {
+                        document.write(' O mês digitado possui 28 dias')
+                    }
+                  break  
+                                
+               case 4:
+               case 6:
+               case 9:
+               case 11:
+               document.write('O mês digitado possui 30 dias')
+               break
+
+               default: //se nao tiver em nenhum case
+               alert('Erro: Não é um mês válido')
+                        
+
+            }
+                  
+
+
+                               
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

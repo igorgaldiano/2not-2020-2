@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+    <script>
+        // 'use strict' impede que variáveis sejam declaradas
+        // sem o uso de let, var ou const
+        // Inicializar variáveis diretamente é má prática de
+        // programação
+        'use strict'
+        
+        
+    </script>
+</head>
+<body>
+    <h1>Formulario de cálculo de preços</h1>
+    <!-- label e input são elementos inline (ou em linha) -->
+    <div> <!-- elemento de bloco = -->
+    <label>Nome do Produto</label>
+    <input size="50">
+    </div>
+
+    <div> <!-- elemento in bloco-->
+    <label>Quantidade</label>
+    <input id="qtd" type="number" min="1" max="10">
+    </div>
+
+      <div>
+    <label>Preço Unitário</label>
+    <input id="preco_unit" type="number" step="0.01" min="0.01">
+    </div>
+
+    <div>
+    <label>PREÇO TOTAL</label>
+    <span id="resultado"></span> <!-- elemento inline -->
+    </div>
+
+     <script>
+        // 'use strict' impede que variáveis sejam declaradas
+        // sem o uso de let, var ou const
+        // Inicializar variáveis diretamente é má prática de
+        // programação
+        'use strict'
+        
+            let elemQtd = document.querySelector('#qtd') //Forma moderna
+            let elemPrecoUnit = document.getElementById('preco_unit') //Forma tradicional
+            let elemResultado = document.querySelector('#resultado')
+
+            function calcular(){
+               let quantidade = parseFloat(elemQtd.value) //Forma tradicional
+               let precoUnit = Number(elemPrecoUnit.value) // Forma Moderna
+               let resultado
+                //Caso ambos os numeros tenham passado na Validação
+
+                 if(!isNaN(quantidade) && !isNaN(precoUnit)){
+                    elemResultado.innerText=(quantidade * precoUnit).toFixed(2)
+                 }
+                 else {
+                 elemResultado.innerText = ''
+                 }       
+            }
+                //change o valor do input mudou (só detectavel após sair do elemento)
+            elemQtd.addEventListener('change', calcular)
+            elemPrecoUnit.addEventListener('change', calcular)
+
+            
+
+
+
+
+    </script>
+
+</body>
+</html>
