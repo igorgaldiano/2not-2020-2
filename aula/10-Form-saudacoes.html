@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+    <style>
+
+        /* Estilo é CSS */
+
+        label{
+           /* forcar o modo de exibição em bloco */
+            display: block;
+         }
+         fieldset label{
+             display: inline;
+         }
+         fieldset {
+             border: 1px solid lightgray;
+             border-radius: 8px;
+             width: 200px; /* ou 50% */
+         }
+        div, fieldset {
+            margin-bottom: 15px;
+        }
+
+        /* div = agrupa os conteiner */
+        </style>   
+    </script>
+</head>
+<body>
+    <h1>Formulário de Saudação</h1>
+    
+    <div>
+        <label> Primeiro Acesso </label>
+        <input type="text" id="primeiro-nome" placeholder="Informe seu primeiro nome" size="25">
+    </div>
+
+    <div>
+        <label> Sobrenome </label>
+        <input type="text" id="sobrenome"  placeholder="Informe seu sobrenome">
+    </div>
+    
+    <div>
+        <label>Forma de tratamento</label>
+        <select id="forma-tratamento">
+            <option>(Selecione)</option>
+            <option>Vossa Majestade</option>
+            <option>Excelentíssimo</option>
+            <option>Vossa Senhoria</option>
+            <option>Senhor/a</option>
+            <option>Cremosíssimo/a</option>
+        </select>
+    </div>
+        <fieldset>
+            <legend>Sexo</legend>
+            <input type="radio" id="masculino" name="sexo" ><label for="masculino">Masculino</label>
+           <br>
+            <input type="radio" id="feminino" name="sexo" checked><label for="feminino">Feminino</label>
+        </fieldset>
+    
+    <div>
+        <label>Hora do dia</label>
+        <input type="number" id="hora-dia" min="0" max="23">
+
+        <fieldset>
+        <legend>Exibicao da saudação</legend>
+        <input type="checkbox" id="alert">
+        <label>Excluir com alert()</label>
+        <br>
+        <input type="checkbox" id="document">
+         <label for="document">Exibir no documento</label>
+         </fieldset>
+
+         <div id="saudacao"></div>
+
+         <div>
+            <button id="enviar">Enviar</button>
+
+
+
+
+     <script>
+        // 'use strict' impede que variáveis sejam declaradas
+        // sem o uso de let, var ou const
+        // Inicializar variáveis diretamente é má prática de
+        // programação
+        'use strict'
+        // Faça um loop for para escrever no documento, com document.write(), apenas os quilômetros nos quais
+        // haverá lombofaixa, no sentido Franca – São Paulo, lembrando que o km 1 fica em São Paulo.
+
+       
+        
+    </script>
+    
+</body>
+
+</html>
